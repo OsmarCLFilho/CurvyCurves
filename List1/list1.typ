@@ -2,11 +2,15 @@
 #let subtitle = "Lista 1"
 #let author = "Osmar Cardoso Lopes Filho"
 #let email = "osmarclopesfilho@gmail.com"
-#let repolink = "https://github.com/OsmarCLFilho"
+#let repolink = "https://github.com/OsmarCLFilho/CurvyCurves/tree/main/List1"
 
 #set par(
   justify: true
 )
+
+#let animlink(animation, content) = [
+  #link(repolink + "/Animations/" + animation)[#content]
+]
 
 #let headercont = align(horizon)[
   #smallcaps[#title #h(1fr) #subtitle]
@@ -20,7 +24,7 @@
   )
 )
 
-#show link: set text(fill: blue)
+#show link: set text(fill: rgb(20%, 20%, 100%))
 
 #show raw.where(block: true): it => {
   block(
@@ -122,7 +126,10 @@ escolhemos em seu intervalo. O resultado é então convertido para um tipo padr�
 atribuido a sua variável. A seguir está o cículo criado:
 #figure(
   image("Images/circle.png", width: 50%),
-  caption: [Circulo parametrizado.]
+  caption: [
+    Circulo parametrizado.
+    #animlink("circle.gif")[Curva animada]
+  ]
 )
 
 Em seguida, podemos calcular as derivadas dessas equações para construir vetores tangentes à
@@ -157,7 +164,10 @@ plot!(plt, (v[:,1], v[:,2]); linecolor=:red, arrow=true)
 
 #figure(
   image("Images/circlevecs.png", width: 50%),
-  caption: [Circulo parametrizado com vetores tangentes.]
+  caption: [
+    Circulo parametrizado com vetores tangentes.
+    #animlink("circlevecs.gif")[Curva e vetor animados]
+  ]
 )
 
 = Questão 2
@@ -210,7 +220,10 @@ gif(anim, "pasnail.gif");
 ```
 #figure(
   image("Images/pasnail.png", width: 50%),
-  caption: [Limaçon]
+  caption: [
+    Limaçon.
+    #animlink("pasnail.gif")[Curva animada]
+  ]
 )
 
 Essa curva passa duas vezes pelo ponto $(0, 0)$ no intervalo $[0, 2pi)$. Visualizamos ambos os
@@ -249,7 +262,9 @@ plot!(plt, (vectors[:,1], vectors[:,2]); linecolor=:red, arrow=true)
 ```
 #figure(
   image("Images/pasnailvecs.png", width: 50%),
-  caption: [Limaçon com vetores tangentes à origem.]
+  caption: [
+    Limaçon com vetores tangentes à origem.
+  ]
 )
 
 = Questão 3
@@ -303,7 +318,10 @@ gif(anim, "diocis.gif"; fps=24);
 
 #figure(
   image("Images/diocis.png", width:50%),
-  caption: [Cissoide de Diocles]
+  caption: [
+    Cissoide de Diocles.
+    #animlink("diocis.gif")[Curva animada]
+  ]
 )
 
 A Cissoide foi usada numa das soluções para o problema de duplicar o cubo. Uma das soluções
@@ -373,7 +391,10 @@ savefig(plt, "folidesc.png")
 
 #figure(
   image("Images/folidesc.png", width:50%),
-  caption: [Folium de Descartes]
+  caption: [
+    Folium de Descartes.
+    #animlink("folidesc.gif")[Curva e vetor animados]
+  ]
 )
 
 Podemos também desenhar os contornos da equação implícita, mostrando as curvas geradas quando
@@ -396,7 +417,9 @@ con = contour(xvalues, yvalues, z; size=(500,500), levels=levels)
 
 #figure(
   image("Images/folidesccon.png", width:50%),
-  caption:[Curvas de nível do Folium]
+  caption:[
+    Curvas de nível do Folium
+  ]
 )
 
 = Questão 5
@@ -438,7 +461,11 @@ gif(anim2, "parabol2.gif")
     image("Images/parabol1.png", width:90%),
     image("Images/parabol2.png", width:90%)
   ),
-  caption: [Parábolas]
+  caption: [
+    Parábolas.
+    #animlink("parabol1.gif")[Primeira parábola] |
+    #animlink("parabol2.gif")[Segunda parábola]
+  ]
 )
 
 A seguir desenhamos as derivadas dessas curvas. Será, então, fácil ver que a segunda curva
@@ -529,7 +556,11 @@ savefig(plt, "hypotch.png");
 
 #figure(
   image("Images/astroid.png", width: 50%),
-  caption: [Astroide: Caso especial da hipotrocoide com $R/r = 4$ e $d = r$]
+  caption: [
+    Astroide: Caso especial da hipotrocoide com $R/r = 4$ e $d = r$ \
+    #animlink("astroid.gif")[Curva e vetor animados] |
+    #animlink("astvecs.gif")[Vetores acumulados]
+  ]
 )
 
 = Questão 7
@@ -561,7 +592,9 @@ savefig(plt, "elips.png");
 
 #figure(
   image("Images/elips.png", width:50%),
-  caption: [Elipse criada pela equação.]
+  caption: [
+    Elipse criada pela equação.
+  ]
 )
 
 = Questão 8
@@ -639,7 +672,10 @@ gif(anim, "spirl.gif"; fps=24);
 
 #figure(
   image("Images/spirl.png", width:50%),
-  caption:[Espiral]
+  caption:[
+    Espiral.
+    #animlink("spirl.gif")[Curva animada]
+  ]
 )
 
 Para mostrar a independência do ângulo em relação a $t$, calculamos as derivadas da curva $gamma$:
