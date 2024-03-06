@@ -21,7 +21,9 @@
     loc => {
       if loc.page() > 1 {headercont}
     }
-  )
+  ),
+
+  numbering: "1"
 )
 
 #show link: set text(fill: rgb(20%, 20%, 100%))
@@ -46,10 +48,11 @@
 
     [
       #text(20pt)[* #smallcaps(title) *] \
-      #text(18pt)[#smallcaps(subtitle)]
+      #text(18pt)[#sym.triangle.filled.r #smallcaps(subtitle)] \
+      #datetime.today().display("[day]/[month]/[year]")
     ],
     [
-      #text(12pt)[#author \ #email]
+      #text(12pt)[#author \ #email] \
     ]
   )
 )
@@ -64,7 +67,7 @@
 
   align(center)[ 
     Esse documento possui códigos que geram animações no formato `gif` e que podem ser acessadas
-    separadamente no seu #link(repolink)[repositório].
+    separadamente no #link(repolink)[repositório].
   ]
 )
 
