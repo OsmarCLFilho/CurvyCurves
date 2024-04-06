@@ -30,6 +30,12 @@
 
   show link: set text(fill: rgb(20%, 20%, 100%))
 
+  show math.equation.where(block: false): it => {
+    box(
+      it
+    )
+  }
+
   show raw.where(block: true): it => {
     block(
       width: 100%,
