@@ -90,7 +90,7 @@
     rows: (100%),
 
     [],
-    image("cover.png", height: 250%)
+    image("cover.svg", height: 250%)
   ),
 
   grid(
