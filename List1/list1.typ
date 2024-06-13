@@ -12,10 +12,12 @@
   #link(repolink + "/Animations/" + animation)[#content]
 ]
 
+// Header content
 #let headercont = align(horizon)[
   #smallcaps[#title #h(1fr) #subtitle]
 ]
 
+// Add header to pages, except for the first one
 #set page(
   header: locate(
     loc => {
@@ -28,6 +30,7 @@
 
 #show link: set text(fill: rgb(20%, 20%, 100%))
 
+// Put code blocks into pretty blocks
 #show raw.where(block: true): it => {
   block(
     width: 100%,
@@ -39,6 +42,7 @@
   )
 }
 
+// Title
 #align(
   center,
   table(
@@ -59,6 +63,7 @@
 
 #box(width: 100%, height: 0.5pt, fill: black)
 
+// Github link
 #box(
   width: 100%,
   radius: 5pt,
